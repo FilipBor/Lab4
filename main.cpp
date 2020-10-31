@@ -1,17 +1,23 @@
 #include <iostream>
-
+#include <array>
 int main() {
 
-    int variable = 1337;
-    int* ptr;
+    std::array<int, 4> numbers;
 
-    std::cout << &ptr <<std::endl;
-    std::cout << &variable <<std::endl;
-    ptr = &variable;
-    std::cout << *ptr <<std::endl;
+    for (int i = 0; i < 4; i++)
+    {
+        numbers[i] = i;
 
-    *ptr = 12;
-    std::cout << variable <<std::endl;
+    }
+
+    int *ptr_numbers = &numbers[0];
+
+    for ( int i = 0; i < 4; i++)
+    {
+        std::cout<<*ptr_numbers<<std::endl;
+        ptr_numbers++;
+    }
 
     return 0;
 }
+

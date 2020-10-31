@@ -1,22 +1,28 @@
 #include <iostream>
-#include <array>
+#include <vector>
+
+void print_contents(std::vector<int>& input)
+{
+    for (int i = 0; i < input.size(); i++)
+    {
+        std::cout<< input[i]<<std::endl;
+
+    }
+}
+
 int main() {
+    int size;
 
-    std::array<int, 4> numbers;
+    std::cout<<" Provide a size for your array: "<<std::endl;
+    std::cin >> size;
+    std::vector<int> numbers;
 
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < size; i++)
     {
-        numbers[i] = i;
+        numbers.push_back(i);
 
     }
-
-    int *ptr_numbers = &numbers[0];
-
-    for ( int i = 0; i < 4; i++)
-    {
-        std::cout<<*ptr_numbers<<std::endl;
-        ptr_numbers++;
-    }
+    print_contents(numbers);
 
     return 0;
 }
